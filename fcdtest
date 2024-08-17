@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faceclaims A-C</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lustria&family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var $container = $(".grid"); 
+            var filters = {}; 
+            var $grid = $container.isotope({
+                itemSelector: ".grid-item", 
+                percentPosition: false 
+            });
+            $(".option-set a").click(function (e) {
+                var $this = $(this); 
+                var filterAttr = "data-filter-value";
+                var filterValue = $this.attr(filterAttr); 
+                var $optionSet = $this.parents(".option-set"); 
+                var group = $optionSet.attr("data-filter-group"); 
+                var filterGroup = filters[group];
+                if (!filterGroup) {
+                    filterGroup = filters[group] = [];
+                }
+                var $selectAll = $optionSet.find('a[' + filterAttr + '=""]'); 
+                var activeClass = "selected", 
+                    exclClass = "exclusive"; 
+                comboFiltering($this, filters, filterAttr, filterValue, $optionSet, group, $selectAll, activeClass, exclClass);
+                var comboFilter = getComboFilter(filters);
+                $grid.isotope({
+                    filter: comboFilter
+                });
+                $this.toggleClass(activeClass);
+                e.preventDefault();
+            });
+        });
+    </script>
+
+    <style>
+        html, body {
+            overflow-x: scroll;
+            overflow-y: auto;
+            text-transform: capitalize;
+            background: #F7F6F2;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #F7F6F2;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #F0E5CF;
+        }
+
+        #sidebar {
+            position: fixed;
+            width: 200px;
+            height: 100%;
+            background: #C8C6C6;
+            text-align: center;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        #title-box {
+            font-family: 'Lustria', serif;
+            font-size: 15px;
+            color: #4B6587;
+        }
+
+        #title-box h1 {
+            margin: 0;
+            padding: 4px;
+        }
+
+        #title-box a {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0px 6px;
+            text-decoration: none;
+            color: #F7F6F2;
+        }
+
+        #line-break {
+            height: 2px;
+            margin: -16px 10px 12px 10px;
+            border-bottom: 2px solid black;
+        }
+
+        #sidebar h2, #sidebar h3 {
+            margin: 2px;
+            padding: 0;
+            color: #4B6587;
+            font-family: 'Lustria', serif;
+        }
+
+        #sidebar h2 {
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+
+        #sidebar h3 {
+            font-size: 0.8em;
+        }
+
+        .filter {
+            list-style: "♦ ";
+            text-align: left;
+            padding: 2px 0px 2px 16px;
+            margin: 0;
+        }
+
+        .filter li {
+            line-height: 1.2;
+            margin: 4px;
+            font-size: 15px;
+        }
+
+        .filter a {
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+
+        .selected {
+            color: #4B6587 !important;
+            font-weight: bold !important;
+            text-decoration: underline !important;
+        }
+
+        .grid {
+            position: absolute;
+            left: 200px;
+            overflow-y: scroll;
+            max-width: 1400px;
+            margin: 2px 2px;
+        }
+
+        .grid-item {
+            display: inline;
+            position: relative;
+            width: 180px;
+            height: 260px;
+            margin: 2px;
+            background: #C8C6C6;
+            color: #333;
+            text-align: center;
+        }
+
+        .grid-item h2 {
+            font-size: 16px;
+            margin: 0;
+            padding: 4px;
+            height: 40px;
+            font-family: 'Lustria', serif;
+        }
+
+        .grid-item img {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            margin: 0px 25px;
+        }
+
+        .grid-item p {
+            position: relative;
+            font-size: 14px;
+            margin: 0;
+            padding: 4px;
+            top: 136px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <div id="title-box">
+            <header><h1>Faceclaims A-C</h1></header>
+            <a href="#">Home</a>
+            <a href="#">Ask</a>
+            <a href="#">Nav</a>
+        </div>
+
+        <br><div id="line-break"></div>
+        
+        <h3>Please make sure to double check the information on any faceclaims before using them!</h3>
+
+        <h2>Gender</h2>
+        <ul class="filter option-set exclusive" data-filter-group="gender">
+            <li><a href="#" data-filter-value="" class="selected">All</a></li>
+            <li><a href="#" data-filter-value=".cm">Men</a></li>
+            <li><a href="#" data-filter-value=".tm">Trans Men</a></li>
+            <li><a href="#" data-filter-value=".cf">Women</a></li>
+            <li><a href="#" data-filter-value=".tf">Trans Women</a></li>
+            <li><a href="#" data-filter-value=".nb">Nonbinary</a></li>
+            <li><a href="#" data-filter-value=".ukgen">Unknown</a></li>
+        </ul>
+
+        <h2>Age</h2>
+        <ul class="filter option-set exclusive" data-filter-group="age">
+            <li><a href="#" data-filter-value="" class="selected">All</a></li>
+            <li><a href="#" data-filter-value=".3040">1930s & 40s</a></li>
+            <li><a href="#" data-filter-value=".5060">1950s & 60s</a></li>
+            <li><a href="#" data-filter-value=".70">1970s</a></li>
+            <li><a href="#" data-filter-value=".80">1980s</a></li>
+            <li><a href="#" data-filter-value=".90">1990s</a></li>
+            <li><a href="#" data-filter-value=".00">2000s</a></li>
+            <li><a href="#" data-filter-value=".ukage">Unknown</a></li>
+        </ul>
+
+        <h2>Ethnicity</h2>
+        <ul class="filter option-set exclusive" data-filter-group="ethnicity">
+            <li><a href="#" data-filter-value="" class="selected">All</a></li>
+            <li><a href="#" data-filter-value=".poc">All People of Color</a></li>
+            <li><a href="#" data-filter-value=".mxd">All Multiethnic</a></li>
+            <li><a href="#" data-filter-value=".white">White Only</a></li>
+            <li><a href="#" data-filter-value=".blk">Black</a></li>
+            <li><a href="#" data-filter-value=".cen">Central Asian</a></li>
+            <li><a href="#" data-filter-value=".east">East Asian</a></li>
+            <li><a href="#" data-filter-value=".ind">Indigenous People (Americas)</a></li>
+            <li><a href="#" data-filter-value=".indx">Indigenous People (Australia & Pacific Islands)</a></li>
+            <li><a href="#" data-filter-value=".lat">Latine (White Latines Included)</a></li>
+            <li><a href="#" data-filter-value=".mid">Middle East & North African</a></li>
+            <li><a href="#" data-filter-value=".pac">Pacific Islander</a></li>
+            <li><a href="#" data-filter-value=".south">South Asian</a></li>
+            <li><a href="#" data-filter-value=".southeast">Southeast Asian</a></li>
+            <li><a href="#" data-filter-value=".uketh">Unknown</a></li>
+        </ul>
+
+        <h2>Role</h2>
+        <ul class="filter option-set exclusive" data-filter-group="role">
+            <li><a href="#" data-filter-value="" class="selected">All</a></li>
+            <li><a href="#" data-filter-value=".muse">Musicians</a></li>
+            <li><a href="#" data-filter-value=".muse1">Producers</a></li>
+            <li><a href="#" data-filter-value=".mod">Models</a></li>
+            <li><a href="#" data-filter-value=".actor">Actors</a></li>
+            <li><a href="#" data-filter-value=".voice">Voice Actors</a></li>
+            <li><a href="#" data-filter-value=".anim">Anime Actors</a></li>
+            <li><a href="#" data-filter-value=".tv">TV Hosts</a></li>
+            <li><a href="#" data-filter-value=".sports">Sports</a></li>
+            <li><a href="#" data-filter-value=".other">Other</a></li>
+            <li><a href="#" data-filter-value=".ukrole">Unknown</a></li>
+        </ul>
+    </div>
+
+    <div class="grid">
+        <div class="grid-item actor cf white 00"><h2>Aaron Carpenter</h2>
+            <img src="https://example.com/aaron_carpenter.jpg" alt="Aaron Carpenter"/>
+            <p>1998, White, American</p>
+        </div>
+    </div>
+</body>
+</html>
